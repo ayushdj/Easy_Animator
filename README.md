@@ -104,7 +104,7 @@ The text view allows the user to:
 
 In order to get a textual view of the animation, the user can call upon the `toString()` method of the EasyAnimatorModelImpl class which will print the entire animation to the console. 
 
-The user could also call upon the `viewShapeJourney(String name)` or `viewShapeJourney(IShape shape)` method to view a particular shape’s cycle throughout the animation. 
+The user could also call upon the `showShapeJourney(String name)` or `showShapeJourney(IShape shape)` method to view a particular shape’s cycle throughout the animation. 
 
  
 
