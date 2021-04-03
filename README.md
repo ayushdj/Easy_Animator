@@ -77,7 +77,9 @@ This interface was created in order to allow easy testing of our controller. It 
 
 This class serves as the Model class of our animation. The class is responsible for implementing the logic 
 that updates the state of objects to eventually pass that information to the controller. The inputs from the controller will call methods in this class to update/mutate our shape objects. The class also allows for the addition and removal of shapes from the animation.
+
 The class utilizes two types of data structures namely, an `ArrayList<IShape>` and a `HashMap<String,AnimationChanges>`. The ArrayList is responsible for storing original states of all shapes present in the animation, while the HashMap stores the mutations that have taken place to each shape. The ArrayList stores a clone of the original shape Objects.
+
 The class contains a `toString()` method that when called returns a textual representation of the animation. 
 
  
