@@ -8,7 +8,7 @@ This project combines 2D shapes and animation to create something visually appea
 
 The project consists of: 
 
-* Interfaces 
+* **Interfaces** 
 
   * IShape 
 
@@ -16,7 +16,7 @@ The project consists of:
 
   * EasyAnimatorModel 
 
-* Classes 
+* **Classes** 
 
    * AbstractShape (abstract class implements IShape) 
 
