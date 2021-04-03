@@ -90,11 +90,11 @@ As of right now, the only view possible with this Model class is the Text View.
 
 The text view allows the user to: 
 
-View a full description of the original states of the shapes that are present in the animation. 
+* View a full description of the original states of the shapes that are present in the animation. 
 
-View all the changes made to every shape present in the animation. 
+* View all the changes made to every shape present in the animation. 
 
-View changes made to a specific shape present in the animation. 
+* View changes made to a specific shape present in the animation. 
 
  
 
