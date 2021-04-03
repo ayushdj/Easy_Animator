@@ -32,7 +32,7 @@ The project consists of:
 
   * EasyAnimatorModel (implements EasyAnimatorModel) 
 
-###IShape:###
+### IShape:
 
 This interface defines the methods that are going to be implemented on different shapes. It consists mainly of a constructor, getter and setter methods. 
 
