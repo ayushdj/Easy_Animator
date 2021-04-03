@@ -10,11 +10,11 @@ The project consists of:
 
 * Interfaces 
 
-  *IShape 
+  * IShape 
 
-  *AnimationChanges 
+  * AnimationChanges 
 
-  *EasyAnimatorModel 
+  * EasyAnimatorModel 
 
 * Classes 
 
