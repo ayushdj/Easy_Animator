@@ -86,7 +86,7 @@ The class contains a toString() method that when called returns a textual repres
 
 As of right now, the only view possible with this Model class is the Text View.  
 
-**Text View:** 
+#### Text View: #### 
 
 The text view allows the user to: 
 
