@@ -18,19 +18,19 @@ The project consists of:
 
 * Classes 
 
-   *AbstractShape (Abstract Class implements IShape) 
+   * AbstractShape (Abstract Class implements IShape) 
 
-   *Rectangle (extends Abstract Shape) 
+   * Rectangle (extends Abstract Shape) 
 
-   *Oval (extends Abstract Shape) 
+   * Oval (extends Abstract Shape) 
 
-  *MoveShape (implements AnimationChanges) 
+  * MoveShape (implements AnimationChanges) 
 
-  *ChangeColor (implements AnimationChanges) 
+  * ChangeColor (implements AnimationChanges) 
 
-  *ScaleShape (implements AnimationChanges) 
+  * ScaleShape (implements AnimationChanges) 
 
-  *EasyAnimatorModel (implements EasyAnimatorModel) 
+  * EasyAnimatorModel (implements EasyAnimatorModel) 
 
 IShape: 
 
