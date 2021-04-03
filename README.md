@@ -1,10 +1,11 @@
 # Easy_Animator
 CS5004 final project
-Overview: 
+
+## Overview: 
 
 This project combines 2D shapes and animation to create something visually appealing. It allows for users to add shapes and edit the animation with respect to shape position, shape color and shape size. The project was completed in a group of three for the CS 5004 class at Northeastern University. 
 
-Model Design Choices and Decisions: 
+## Model Design Choices and Decisions: 
 
 The project consists of: 
 
@@ -18,9 +19,9 @@ EasyAnimatorModel
 
 Classes 
 
-AbstractShape (Abstract Class implements IShape) 
+ AbstractShape (Abstract Class implements IShape) 
 
-Rectangle (extends Abstract Shape) 
+ Rectangle (extends Abstract Shape) 
 
 Oval (extends Abstract Shape) 
 
@@ -82,7 +83,7 @@ The class contains a toString() method that when called returns a textual repres
 
  
 
-View Design: 
+## View Design: 
 
 As of right now, the only view possible with this Model class is the Text View.  
 
@@ -98,7 +99,7 @@ View changes made to a specific shape present in the animation.
 
  
 
-Run Design: 
+## Run Design: 
 
 In order to get a textual view of the animation, the user can call upon the toString() method of the EasyAnimatorModelImpl class which will print the entire animation to the console. 
 
