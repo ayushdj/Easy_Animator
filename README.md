@@ -40,7 +40,7 @@ This interface defines the methods that are going to be implemented on different
 
 The AbstractShape class was created to reduce duplication of variables and functions that would be used by both the Rectangle and Oval classes. It implements most of the methods outlined in IShape. However, methods such as getPerimeter() and getArea() amongst others, are implemented in the classes that extended AbstractShape. 
 
-**Rectangle extends AbstractShape):**
+**Rectangle (extends AbstractShape):**
 
 This class represents the Rectangle shape. It extends the class AbstractShape because a lot of 
 its methods and fields are common to all shapes. Rectangle also contains a toString() method that displays its original state. 
