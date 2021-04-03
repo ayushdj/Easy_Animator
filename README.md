@@ -31,6 +31,7 @@ The project consists of:
   * ScaleShape (implements AnimationChanges) 
 
   * EasyAnimatorModel (implements EasyAnimatorModel) 
+  
 
 #### IShape:
 
