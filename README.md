@@ -86,6 +86,10 @@ The reason we went with a HashMap as our primary data structure is because each 
 
 The class contains a `toString()` method that when called returns a textual representation of the animation. 
 
+#### Further Design Choices:
+We chose to represent mutations such as moving, changing scale, changing color as their own objects to make our design more modular. This decision allows each `MoveShape`, `ScaleShape`, `ChangeColor`to represent their changes in their own `toString()` method. Furthermore, if we needed to add more changes to the obects, we can just create more classes that implement the `AnimationChanges` interface. This eliminates the need to edit the existing code. 
+
+
  
 
 ## View Design: 
