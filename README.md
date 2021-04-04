@@ -78,7 +78,11 @@ This interface was created in order to allow easy testing of our controller. It 
 This class serves as the Model class of our animation. The class is responsible for implementing the logic 
 that updates the state of objects to eventually pass that information to the controller. The inputs from the controller will call methods in this class to update/mutate our shape objects. The class also allows for the addition and removal of shapes from the animation.
 
-The class utilizes two types of data structures namely, an `ArrayList<IShape>` and a `HashMap<String,AnimationChanges>`. The ArrayList is responsible for storing original states of all shapes present in the animation, while the HashMap stores the mutations that have taken place to each shape. The ArrayList stores a clone of the original shape Objects.
+The class utilizes two types of data structures namely, an `ArrayList<IShape>` and a `HashMap<String,AnimationChanges>`. The ArrayList is responsible for storing original states of all shapes present in the animation, while the HashMap stores the mutations that have taken place to each shape. The keys of the hashmap are the String names of the IShape objects, and the values are an `ArrayList<AnimationChanges`. The ArrayList stores a clone of the original shape Objects.
+
+We used an implementation of Java's List interface because they are dynamic in nature. This is because an animation can have multiple shapes within a certain time period. Therefore, we can add and remove shapes as we please to the ArrayList. This would have been a much harder process had we used a traditional 2D array. 
+
+The reason we went with a HashMap as our primary data structure is because each name associated with each shape is unique. The name of the shape can also be used to identify all the modifications made to that particular shape. Therefore we used a HashMap, due to the "unique" nature of Key/Value pairs.
 
 The class contains a `toString()` method that when called returns a textual representation of the animation. 
 
