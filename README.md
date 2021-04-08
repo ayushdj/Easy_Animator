@@ -1,4 +1,4 @@
-# Easy_Animator
+# Easy Animator
 
 ## Overview: 
 
