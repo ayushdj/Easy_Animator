@@ -1,4 +1,4 @@
-# Easy Animator
+# Easy_Animator
 
 ## Overview: 
 
@@ -55,6 +55,8 @@ its methods and fields are common to all shapes. Oval also contains a `toString(
 
 This interface defines the methods that change the state of an IShape object. This interface 
 will be implemented by class that represent the changes. We felt that this interface was required since classes that mutate the fields of IShape Objects share a lot of commonalities.  
+Any class that implements this interface will also have an added "tweening" method, that allows 
+us to make changes per "tick" in the animation (if the user selects a visual view).
 
 #### MoveShape (implements AnimationChanges):
 
@@ -90,11 +92,32 @@ The class contains a `toString()` method that when called returns a textual repr
 We chose to represent mutations such as moving, changing scale, changing color as their own objects to make our design more modular. This decision allows each `MoveShape`, `ScaleShape`, `ChangeColor`to represent their changes in their own `toString()` method. Furthermore, if we needed to add more changes to the obects, we can just create more classes that implement the `AnimationChanges` interface. This eliminates the need to edit the existing code. 
 
 
- 
 
-## View Design: 
 
-As of right now, the only view possible with this Model class is the Text View.  
+## View Design Choices and Decisions:
+
+The view consists of: 
+
+* **Interfaces**
+
+  * IView
+
+* **Classes**
+  
+  * SvgView (implements IView)
+  * TextView (implements IView)
+  * VisualView (implements IView, has a JFrame and JPanel)
+    * SwingFrame (extends JFrame)
+    * SwingPanel (extends JPanel)
+  * EasyAnimator (parses the file name passed in from the command line and determines what
+    type of view the user wants, the name of the output file, populates the data structures
+     in the model and determines the speed of the animation. Also handles exceptional 
+    situations based on the command-line input. Passes on the parsed information to the ViewFactory)
+  * ViewFactory (determines what kind of view to produce based on user input that was passed to it
+    from the EasyAnimator class)
+    
+N.B. The model's data structures are populated through the use of the AnimationBuilder, whose
+implementation exists as a static class in the EasyAnimatorModelImpl class.
 
 ### Text View: ### 
 
@@ -106,20 +129,31 @@ The text view allows the user to:
 
 * View changes made to a specific shape present in the animation. 
 
- 
+### SVG View: ###
 
-## Run Design: 
+The SVG view allows us to render the model in SVG format such that the animation can be viewed
+in other applications, such as a browser. It allows the same abilities as the text view, except that
+the animation is represented in svg/xml format. The SVG view is built using a string builder, which 
+is then returned to the ViewFactory that outputs that string into a file.
 
-In order to get a textual view of the animation, the user can call upon the `toString()` method of the EasyAnimatorModelImpl class which will print the entire animation to the console. 
+### Visual View: ###
 
-The user could also call upon the `showShapeJourney(String name)` or `showShapeJourney(IShape shape)` method to view a particular shape’s cycle throughout the animation. 
+The Visual view allows a user to visualize in real time the animation that they passed into the 
+AnimationReader. 
 
- 
+The visual view uses the Java JFrame and JPanel classes respectively to show the animation to the 
+user. The JFrame also has the ability to scroll if the size of the canvas is not optimal. The JFrame 
+uses composition to have a JPanel, and the JPanel is responsible for drawing a set of mutated 
+shapes at a particular time stamp (i.e. the current tick). The list of mutated shapes are given
 
- 
+## Overview of Run Design: 
 
- 
-
- 
-
- 
+1. The user passes in a text file representing an animation.
+2. The text file, along with any other command line arguments are passed into the EasyAnimator class.
+   - Data structures in the model are populated based on the text file going into the AnimationReader.
+     (They are populated through the use of the builder in the EasyAnimatorModelImpl class).
+   - The type of view, output file name, and the speed of the animation are also determined.
+3. We pass along the new "filled" model, the speed, the type of view, and the output file name to
+   the ViewFactory class.
+4. Based on the view type passed into it from EasyAnimator, an 
+   instance of the appropriate IView subtype is created, and the view is generated.
